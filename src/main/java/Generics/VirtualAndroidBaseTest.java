@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pageObjects.Android.FormPage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,7 +21,7 @@ public class VirtualAndroidBaseTest
 {
     //public static void main(String[] args) throws MalformedURLException {
     public AndroidDriver driver;
-    public FormPage formPage;
+    //public FormPage formPage;
     @BeforeClass
     public void configureAppium() throws IOException {
         //AndroidDriver driver = new AndroidDriver(new URL("https://127.0.0.1:4723"),null);
@@ -33,8 +32,6 @@ public class VirtualAndroidBaseTest
         String ipAddress = prop.getProperty("ipAddress");
        // String port = prop.getProperty("prop");
         int port = Integer.parseInt(prop.getProperty("port"));
-
-
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("Pixel 9a API 36.0");
@@ -52,7 +49,7 @@ public class VirtualAndroidBaseTest
         //driver.findElement(AppiumBy.accessibilityId("Preference")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println("App open");
-        formPage = new FormPage(driver);
+      //  formPage = new FormPage(driver);
     }
 
     //LongPressActionMethod

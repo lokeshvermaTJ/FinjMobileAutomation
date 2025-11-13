@@ -10,28 +10,27 @@
         <!--test.java.testScripts.LoginTest -->
         <!--tc_VerifyPermission -->
         <!--test.java.testScripts.MyLeadsTest -->
-        <!--test.java.testScripts.HomePageTest  <include name="tc_VerifyHomepageTutorialScreens"/>-->
+        <!--test.java.testScripts.CreateLeadTest -->
+        <!--test.java.testScripts.ProfilePagesTest -->
 
+
+        <!--test.java.testScripts.HomePageTest  <include name="tc_VerifyHomepageTutorialScreens"/>-->
 
 
 
     </listeners>
    <test thread-count="5" name="End TO End FrameWorkTest">
+       <parameter name="env" value="android"/>
        <classes>
-           <class name="test.java.testScripts.HomePageTest">
+           <class name="test.java.testScripts.CreateLeadTest">
                 <methods>
-                    <include name="tc_VerifyHomepageTutorialScreens"/>
+                    <include name="testSubmitFormSuccessfully"/>
                 </methods>
             </class>
         </classes>
     </test>
 </suite>
 
-        <!--tc_ValidUser_SignUp -->
-        <!--test.java.testScripts.LoginTest -->
-        <!--tc_VerifyPermission -->
-        <!--test.java.testScripts.MyLeadsTest -->
 
-        <!--test.java.testScripts.HomePageTest  <include name="tc_VerifyHomepageTutorialScreens"/>-->
 
 

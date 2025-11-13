@@ -75,22 +75,6 @@ public class ListenerNew extends BaseAndroidClass implements ITestListener {
         test.get().log(Status.PASS, "Test Case Passed: " + result.getMethod().getMethodName());
     }
 
-//    @Override
-//    public void onTestFailure(ITestResult result) {
-//        test.get().log(Status.FAIL, "Test Case FAILED: " + result.getMethod().getMethodName());
-//        test.get().log(Status.FAIL, "Cause: " + result.getThrowable());
-//
-//        try {
-//            driver = (AppiumDriver) result.getTestClass().getRealClass().getField("driver")
-//                    .get(result.getInstance());
-//            test.get().addScreenCaptureFromPath(
-//                    getScreenshot(driver, result.getMethod().getMethodName()),
-//                    result.getMethod().getMethodName()
-//            );
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     @Override
     public void onTestFailure(ITestResult result) {
@@ -128,41 +112,6 @@ public class ListenerNew extends BaseAndroidClass implements ITestListener {
         onTestFailure(result);
     }
 
-//    @Override
-//    public void onFinish(ITestContext context) {
-//        suiteEndTime = System.currentTimeMillis();
-//
-//        int totalTests = context.getAllTestMethods().length;
-//        int passedTests = context.getPassedTests().size();
-//        int failedTests = context.getFailedTests().size();
-//        int skippedTests = context.getSkippedTests().size();
-//
-//        int totalSteps = passSteps + failSteps + infoSteps;
-//
-//        long durationMillis = suiteEndTime - suiteStartTime;
-//        long minutes = (durationMillis / 1000) / 60;
-//        long seconds = (durationMillis / 1000) % 60;
-//        long millis = durationMillis % 1000;
-//
-//        double passPercentage = (totalTests > 0) ? ((double) passedTests / totalTests) * 100 : 0;
-//
-//        // Add execution summary as a separate test node in the report
-//        ExtentTest summary = extent.createTest("Execution Summary");
-//        summary.log(Status.INFO, "Total Tests: " + totalTests);
-//        summary.log(Status.INFO, "Passed: " + passedTests);
-//        summary.log(Status.INFO, "Failed: " + failedTests);
-//        summary.log(Status.INFO, "Skipped: " + skippedTests);
-//        summary.log(Status.INFO, "Total Steps: " + totalSteps);
-//        summary.log(Status.INFO, "Steps Passed: " + passSteps);
-//        summary.log(Status.INFO, "Steps Failed: " + failSteps);
-//        summary.log(Status.INFO, "Steps Info: " + infoSteps);
-//        summary.log(Status.INFO, "Start Time: " + new Date(suiteStartTime));
-//        summary.log(Status.INFO, "End Time: " + new Date(suiteEndTime));
-//        summary.log(Status.INFO, String.format("Total Time Taken: %dm %ds %dms", minutes, seconds, millis));
-//        summary.log(Status.INFO, "Pass Percentage: " + String.format("%.2f", passPercentage) + "%");
-//
-//        extent.flush();
-//    }
 
     @Override
     public void onFinish(ITestContext context) {

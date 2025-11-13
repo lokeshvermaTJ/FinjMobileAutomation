@@ -15,17 +15,18 @@ public class HomePageTest extends BaseAndroidClass {
         HomePagePage = new HomePagePage(driver);
         LoginTest log = new LoginTest();
         log.tc_ValidDirect_Login();
+        //log.tc_ValidDirect_Login();
         Thread.sleep(5000);
         HomePagePage.verifytutorialScreen();
         HomePagePage.verifyProfileClick();
 
     }
 
-    @Test
-    public static void tc_verifySellTractorScreen() throws InterruptedException {
-        HomePagePage = new HomePagePage(driver);
-        tc_VerifyHomepageTutorialScreens();
-        HomePagePage.getSellTractor().click();
-        Thread.sleep(5000);
-    }
+//    @Test
+//    public static void tc_verifySellTractorScreen() throws InterruptedException {
+//        HomePagePage = new HomePagePage(driver);
+//        tc_VerifyHomepageTutorialScreens();
+//        HomePagePage.getSellTractor().click();
+//        Thread.sleep(5000);
+//    }
 }

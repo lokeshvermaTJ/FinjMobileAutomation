@@ -7,7 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pageObjects.Android.FormPage;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,21 +20,18 @@ import java.util.Date;
 public class BaseAndroidClass {
 
     public static AndroidDriver driver;
-    public FormPage formPage;
+    //public FormPage formPage;
 
-    // @BeforeClass(alwaysRun = true)
+    //@BeforeClass(alwaysRun = true)
     @BeforeClass
+    //@Parameters({"env"})
     public void configureAppium() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
-
         caps.setCapability("platformName", "Android");
         caps.setCapability("appium:deviceName", "POCO C51");
         caps.setCapability("appium:udid", "YPCM8LMFA6XGXWHY");
         caps.setCapability("appium:appPackage", "com.finjpartnerapp");
         caps.setCapability("appium:appActivity", "com.finjpartnerapp.MainActivity");
-        //caps.setCapability("appium:appActivity", "com.finjpartnerapp/com.finjpartnerapp.MainActivity");
-
-
         caps.setCapability("appium:automationName", "UiAutomator2");
         //caps.setCapability("appium:noReset", "true");
         //        caps.setCapability("appium:fullReset","false");
@@ -44,7 +41,7 @@ public class BaseAndroidClass {
         driver = new AndroidDriver(url, caps);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println("App open");
-        formPage = new FormPage(driver);
+       // formPage = new FormPage(driver);
     }
 
 //

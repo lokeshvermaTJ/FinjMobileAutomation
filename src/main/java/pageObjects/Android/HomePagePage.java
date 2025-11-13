@@ -107,6 +107,7 @@ public class HomePagePage extends AndroidActions {
     private WebElement sellTractormain;
 
 
+
 //-----------------------------//Scrpit generation test cases--------------------------------------------//
 
 
@@ -124,8 +125,8 @@ public class HomePagePage extends AndroidActions {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Disbursed Lead']")
     private WebElement disbursedLeadCard;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='View All']")
-    private WebElement viewAllLeads;
+//    @AndroidFindBy(xpath = "//android.widget.TextView[@text='View All']")
+//    private WebElement viewAllLeads;
 
     // My Tools
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='EMI Calculator']")
@@ -165,6 +166,8 @@ public class HomePagePage extends AndroidActions {
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Add']")
     private WebElement floatingActionButton;
 
+
+
 //---------------------------------------------------------------------------------------------------//
     public WebElement getNextClick() {
         return nextClick;
@@ -178,10 +181,10 @@ public class HomePagePage extends AndroidActions {
         return doneClick;
     }
 
-    public void verifyTutorialFinjPartner() {
-        Assert.assertEquals(finjPartnerText.getText(), expfinjPartnerText);
-        Assert.assertEquals(sendManageText.getText(), expsendManageText);
-    }
+//    public void verifyTutorialFinjPartner() {
+//        Assert.assertEquals(finjPartnerText.getText(), expfinjPartnerText);
+//        Assert.assertEquals(sendManageText.getText(), expsendManageText);
+//    }
 
     public void verifyTutorialSellTractor() {
         Assert.assertEquals(sellTractorText.getText(), expsellTractorText);
@@ -213,34 +216,34 @@ public class HomePagePage extends AndroidActions {
         Assert.assertEquals(addGSTText.getText(), expaddGSTText);
     }
 
-    public void verifyTutorialHomePage() throws InterruptedException {
-        Assert.assertEquals(finjPartnerText.getText(), expfinjPartnerText);
-        Assert.assertEquals(sendManageText.getText(), expsendManageText);
-        Thread.sleep(2000);
-        nextClick.click();
-        Assert.assertEquals(sellTractorText.getText(), expsellTractorText);
-        Assert.assertEquals(sendManageTractorText.getText(), expsendManageTractorText);
-        nextClick.click();
-        Assert.assertEquals(createLeadText.getText(), expcreateLeadText);
-        Assert.assertEquals(quicklyCreateLeadText.getText(), expquicklyCreateLeadText);
-        nextClick.click();
-        Assert.assertEquals(myLeadsText.getText(), expmyLeadsText);
-        Assert.assertEquals(viewManageText.getText(), expviewManageText);
-        nextClick.click();
-        Assert.assertEquals(kycPendingText.getText(), expkycPendingText);
-        Assert.assertEquals(finishKycText.getText(), expfinishKycText);
-        nextClick.click();
-        Assert.assertEquals(bankPendingText.getText(), expbankPendingText);
-        Assert.assertEquals(addBankText.getText(), expaddBankText);
-        nextClick.click();
-        Assert.assertEquals(gstPendingText.getText(), expgstPendingText);
-        Assert.assertEquals(addGSTText.getText(), expaddGSTText);
-        doneClick.click();
-    }
-
-    public WebElement getSellTractor() {
-        return sellTractor;
-    }
+//    public void verifyTutorialHomePage() throws InterruptedException {
+//        Assert.assertEquals(finjPartnerText.getText(), expfinjPartnerText);
+//        Assert.assertEquals(sendManageText.getText(), expsendManageText);
+//        Thread.sleep(2000);
+//        nextClick.click();
+//        Assert.assertEquals(sellTractorText.getText(), expsellTractorText);
+//        Assert.assertEquals(sendManageTractorText.getText(), expsendManageTractorText);
+//        nextClick.click();
+//        Assert.assertEquals(createLeadText.getText(), expcreateLeadText);
+//        Assert.assertEquals(quicklyCreateLeadText.getText(), expquicklyCreateLeadText);
+//        nextClick.click();
+//        Assert.assertEquals(myLeadsText.getText(), expmyLeadsText);
+//        Assert.assertEquals(viewManageText.getText(), expviewManageText);
+//        nextClick.click();
+//        Assert.assertEquals(kycPendingText.getText(), expkycPendingText);
+//        Assert.assertEquals(finishKycText.getText(), expfinishKycText);
+//        nextClick.click();
+//        Assert.assertEquals(bankPendingText.getText(), expbankPendingText);
+//        Assert.assertEquals(addBankText.getText(), expaddBankText);
+//        nextClick.click();
+//        Assert.assertEquals(gstPendingText.getText(), expgstPendingText);
+//        Assert.assertEquals(addGSTText.getText(), expaddGSTText);
+//        doneClick.click();
+//    }
+//
+//    public WebElement getSellTractor() {
+//        return sellTractor;
+//    }
 
 
     public void verifytutorialScreen() throws InterruptedException {
@@ -257,9 +260,9 @@ public class HomePagePage extends AndroidActions {
     }
 
     // --- Action Methods ---
-    public void clickSellTractor() {
-        sellTractor.click();
-    }
+//    public void clickSellTractor() {
+//        sellTractor.click();
+//    }
 
     public void clickViewAllLeads() {
         viewAllLeads.click();

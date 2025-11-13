@@ -10,15 +10,15 @@ public class MyLeadsTest extends BaseAndroidClass {
 
     static MyLeadsPage MyLeadsPage;
 
-    @Test
-    public static void tc_VerifyHomepageTutorialScreens() throws InterruptedException {
-         MyLeadsPage  = new MyLeadsPage(driver);
-
-          LoginTest log = new LoginTest();
-          log.tc_ValidDirect_Login();
-         HomePageTest.tc_verifySellTractorScreen();
-         MyLeadsPage.verifyAllApplicationScreenTest();
-    }
+//    @Test
+//    public static void tc_VerifyHomepageTutorialScreens() throws InterruptedException {
+//         MyLeadsPage  = new MyLeadsPage(driver);
+//
+//          LoginTest log = new LoginTest();
+//          log.tc_ValidDirect_Login();
+//         HomePageTest.tc_verifySellTractorScreen();
+//         MyLeadsPage.verifyAllApplicationScreenTest();
+//    }
 
 }
 

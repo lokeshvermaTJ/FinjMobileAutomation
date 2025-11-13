@@ -55,6 +55,14 @@ public class LogIn extends AndroidActions {
 
     final static String expToastUpdateSuccessText = "User Updated Successfully!";
 
+    //Locators For Location Permission
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_deny_button")
+    private WebElement denyLocation;
+
+    @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_deny_and_dont_ask_again_button")
+    private WebElement denyLocation2;
+
+
     // Locators For Notification Pages
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_icon")
     private WebElement permissionIconLogo;
@@ -188,6 +196,9 @@ public class LogIn extends AndroidActions {
     @AndroidFindBy(xpath = "//com.horcrux.svg.PathView")
     private WebElement districtCross;
 
+    @AndroidFindBy(accessibility = "Tehsil*")
+    private WebElement tehsilElement;
+
     @AndroidFindBy(xpath = "//android.widget.Button[@content-desc='Submit']")
     private WebElement sumitButton;
 
@@ -204,13 +215,15 @@ public class LogIn extends AndroidActions {
         return denyButton;
     }
 
+    public void locationPermission(){
+        denyLocation.click();
+    }
+
     public void permissionValidation() throws InterruptedException {
         allowButton.click();
         Thread.sleep(2000);
         System.out.println("User Click on the Allow Button");
     }
-
-
 
     public void enterMobileNo() {
         Random random = new Random();
@@ -244,15 +257,18 @@ public class LogIn extends AndroidActions {
             androidDriver.pressKey(new KeyEvent(key));
         }
         System.out.println("User Entered the OTP");
+        Thread.sleep(1000);
+
     }
 
 
 
     public void clickNext() throws InterruptedException {
+        //denyLocation2.click();
         nextClick.click();
         System.out.println("➡️ Clicked on Next button");
         Thread.sleep(1000);
-
+       // denyLocation2.click();
     }
 
     // Enter Name
@@ -295,6 +311,13 @@ public class LogIn extends AndroidActions {
         scrollToText(district);
         driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='" + district + "']")).click();
     }
+
+    public void selectTehsil(String tehsil) {
+        tehsilElement.click();
+        scrollToText(tehsil);
+        driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='" + tehsil + "']")).click();
+    }
+
 
     // Submit Form
     public void clickSubmit() {

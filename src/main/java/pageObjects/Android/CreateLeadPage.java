@@ -183,13 +183,6 @@ public class CreateLeadPage extends AndroidActions {
     }
 
 
-
-
-
-
-
-
-
     public void scrollToText(String text) {
         super.scrollToText(text);
     }

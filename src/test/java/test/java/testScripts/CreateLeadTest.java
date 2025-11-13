@@ -24,6 +24,7 @@ public class CreateLeadTest extends BaseAndroidClass {
         homePagePage = new HomePagePage(driver);
 
         // Perform login steps
+        logIn.locationPermission();
         logIn.permissionValidation();
         logIn.enterLoginMobileNo();
         logIn.enterOtp();
@@ -105,11 +106,6 @@ public class CreateLeadTest extends BaseAndroidClass {
     public void testSubmitFormSuccessfully() throws InterruptedException {
         createLeadPage = new CreateLeadPage(driver);
         logIn = new LogIn(driver);
-//        logIn.permissionValidation();
-//        //logIn.enterMobileNo();
-//        logIn.enterLoginMobileNo();
-//        logIn.enterOtp();
-//
 
         HomePagePage homePagePage = new HomePagePage(driver);
         homePagePage.verifytutorialScreen();

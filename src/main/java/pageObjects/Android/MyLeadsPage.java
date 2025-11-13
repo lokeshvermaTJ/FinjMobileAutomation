@@ -33,19 +33,17 @@ public class MyLeadsPage extends AndroidActions {
     final static String expOpsCheckPending = "OPS Check Pending";
     final static String expApprovedLeads = "Approved Leads";
 
-    final static String expDisbursedLeadsText= "Discbursed Leads";
+    final static String expDisbursedLeadsText = "Discbursed Leads";
     final static String expRejectedLeadsText = "Rejected Leads";
     final static String expCustomerCancellation = "Customer Cancellation";
 
-   // Login\nLeads
+    // Login\nLeads
     //OPS Check\nPending
     //Approved\nLeads
     //Verification\nPending
     //Disbursed\nLeads
     //Rejected\nLeads
     //Customer\nCancellation
-
-
 
 
     // Locators For Tutorial Screen
@@ -65,9 +63,6 @@ public class MyLeadsPage extends AndroidActions {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Truck']")
     private WebElement truckText;
-
-
-
 
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Open Leads']")
@@ -104,9 +99,8 @@ public class MyLeadsPage extends AndroidActions {
     }
 
 
-
     public void verifyAllApplicationScreenTest() {
-        Assert.assertEquals(allApplicationtext.getText(),expallApplicationText);
+        Assert.assertEquals(allApplicationtext.getText(), expallApplicationText);
 
     }
 

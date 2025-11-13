@@ -1,6 +1,7 @@
 package test.java.testScripts;
 
 import Generics.BaseAndroidClass;
+import Generics.BaseAndroidClass2;
 import com.aventstack.extentreports.Status;
 import listeners.ListenerNew;
 import org.testng.Assert;
@@ -9,7 +10,7 @@ import pageObjects.Android.LogIn;
 
 
 
-public class LoginTest extends BaseAndroidClass {
+public class LoginTest extends BaseAndroidClass2 {
 
     static LogIn logIn;
 
@@ -30,6 +31,7 @@ public class LoginTest extends BaseAndroidClass {
         LogIn logIn = new LogIn(driver);
         logIn.permissionValidation();
         System.out.println("Click on the Allow Button");
+        System.out.println("User Click on the Checkbox Button");
         Thread.sleep(1000);
         logIn.enterMobileNo();
         logIn.enterOtp();
@@ -38,10 +40,31 @@ public class LoginTest extends BaseAndroidClass {
 
     @Test
     public void tc_ValidDirect_Login() throws InterruptedException {
+//        logIn = new LogIn(driver);
+//        logIn.permissionValidation();
+//        logIn.enterLoginMobileNo();
+//        logIn.enterOtp();
         logIn = new LogIn(driver);
+        ListenerNew.logStep(Status.INFO, "Starting Full SignUp Flow");
+
+
+        logIn.locationPermission();
+
+        // Allow permission
         logIn.permissionValidation();
+        ListenerNew.logStep(Status.PASS, "Permissions allowed");
+
+        // Enter mobile and OTP
         logIn.enterLoginMobileNo();
+        ListenerNew.logStep(Status.PASS, "Entered mobile number");
+
         logIn.enterOtp();
+        ListenerNew.logStep(Status.PASS, "Entered OTP");
+
+//        logIn.clickNext();
+//        ListenerNew.logStep(Status.PASS, "Clicked Next button on Basic Details Tutorial");
+
+//        Thread.sleep(4000);
 
     }
 
@@ -113,64 +136,12 @@ public class LoginTest extends BaseAndroidClass {
                 || driver.getPageSource().contains("success"), "Submit button did not work correctly");
     }
 
-//    @Test
-//    public void tc_verifySignUp() throws InterruptedException {
-//        logIn = new LogIn(driver);
-//        testAllowPermission();
-//        testSignUPLogin();
-//        logIn.clickNext();
-//        Thread.sleep(4000);
-//        logIn.enterName("Lokesh");
-//        logIn.enterEmail("lokeshverma@tractorjunction.com");
-//        Thread.sleep(1000);
-//        logIn.selectDob("01 September 2007");
-//        logIn.enterAddress("Tractor Junction Sector-9 Noida(U.P.)");
-//        Thread.sleep(1000);
-//        logIn.selectState("Uttar Pradesh");
-//        Thread.sleep(1000);
-//        logIn.selectDistrict("Bulandshahr");
-//        logIn.clickSubmit();
-//    }
-//@Test
-//public void tc_verifySignUp() throws InterruptedException {
-//    logIn = new LogIn(driver);
-//    ListenerNew.logStep(Status.INFO, "Starting Full SignUp Flow");
-//
-//    testAllowPermission();
-//    testSignUPLogin();
-//
-//    logIn.clickNext();
-//    ListenerNew.logStep(Status.PASS, "Clicked Next button after OTP");
-//
-//    Thread.sleep(4000);
-//    logIn.enterName("Lokesh");
-//    ListenerNew.logStep(Status.PASS, "Entered Name: Lokesh");
-//
-//    logIn.enterEmail("lokeshverma@tractorjunction.com");
-//    ListenerNew.logStep(Status.PASS, "Entered Email: lokeshverma@tractorjunction.com");
-//
-//    Thread.sleep(1000);
-//    logIn.selectDob("01 September 2007");
-//    ListenerNew.logStep(Status.PASS, "Selected DOB");
-//
-//    logIn.enterAddress("Tractor Junction Sector-9 Noida(U.P.)");
-//    ListenerNew.logStep(Status.PASS, "Entered Address");
-//
-//    Thread.sleep(1000);
-//    //logIn.selectState("Uttar Pradesh");
-//    ListenerNew.logStep(Status.PASS, "Selected State");
-//
-//    Thread.sleep(1000);
-//    logIn.selectDistrict("Bulandshahr");
-//    ListenerNew.logStep(Status.PASS, "Selected District");
-//
-//    logIn.clickSubmit();
-//    ListenerNew.logStep(Status.PASS, "Submitted Signup Form Successfully");
-
     @Test
     public void tc_verifySignUp() throws InterruptedException {
         logIn = new LogIn(driver);
         ListenerNew.logStep(Status.INFO, "Starting Full SignUp Flow");
+
+        logIn.locationPermission();
 
         // Allow permission
         logIn.permissionValidation();
@@ -184,23 +155,13 @@ public class LoginTest extends BaseAndroidClass {
         ListenerNew.logStep(Status.PASS, "Entered OTP");
 
         logIn.clickNext();
-        ListenerNew.logStep(Status.PASS, "Clicked Next button after OTP");
+        ListenerNew.logStep(Status.PASS, "Clicked Next button on Basic Details Tutorial");
 
         Thread.sleep(4000);
 
         // Enter details
         logIn.enterName("Lokesh");
         ListenerNew.logStep(Status.PASS, "Entered Name: Lokesh");
-
-        logIn.enterEmail("lokeshverma@tractorjunction.com");
-        ListenerNew.logStep(Status.PASS, "Entered Email: lokeshverma@tractorjunction.com");
-
-        Thread.sleep(1000);
-        logIn.selectDob("01 September 2007");
-        ListenerNew.logStep(Status.PASS, "Selected DOB: 01 September 2007");
-
-        logIn.enterAddress("Tractor Junction Sector-9 Noida(U.P.)");
-        ListenerNew.logStep(Status.PASS, "Entered Address: Tractor Junction Sector-9 Noida(U.P.)");
 
         Thread.sleep(1000);
         logIn.selectState("Uttar Pradesh");
@@ -209,18 +170,13 @@ public class LoginTest extends BaseAndroidClass {
         Thread.sleep(1000);
         logIn.selectDistrict("Bulandshahr");
         ListenerNew.logStep(Status.PASS, "Selected District: Bulandshahr");
+        Thread.sleep(1000);
+        logIn.selectTehsil("Khurja");
+        ListenerNew.logStep(Status.PASS, "Selected Tehsil: Khurja");
 
         logIn.clickSubmit();
         ListenerNew.logStep(Status.PASS, "Submitted Signup Form Successfully");
 
-//        // Verification (force a fail example)
-//        boolean successMsg = driver.getPageSource().contains("User Updated Successfully");
-//        if (successMsg) {
-//            ListenerNew.logStep(Status.PASS, "User updated successfully message displayed");
-//        } else {
-//            ListenerNew.logStep(Status.FAIL, "User updated successfully message NOT displayed");
-//            Assert.fail("Expected success message not found!");
-//        }
         ListenerNew.logStep(Status.INFO, "SignUp Flow Completed");
     }
 
